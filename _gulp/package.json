@@ -1,0 +1,32 @@
+{
+  "name": "RightSite.pl",
+  "version": "1.0.0",
+  "description": "Podstaowa konfiguracja gulp dla wiekszosci projektow z 23.07.2019r.",
+  "author": "Franciszek Andruszkiewicz",
+  "url": "http://rightsite.pl",
+  "license": "MIT License",
+  "keywords": "gulp-4.1",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "*",
+    "gulp-eslint": "^6.0.0",
+    "gulp-merge-media-queries": "*",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.2.0",
+    "gulp-wait": "*"
+  },
+  "scripts": {
+    "postinstall": "gulp test"
+  },
+  "dependencies": {
+    "terser": "^4.1.2"
+  }
+}

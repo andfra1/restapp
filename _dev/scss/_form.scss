@@ -1,0 +1,125 @@
+.form {
+  display: block;
+
+  &__row {
+    margin: 30px -5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__col {
+    margin: 0 5px;
+    position: relative;
+    flex: 1 0 auto;
+  }
+
+  &__label, label {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    order: 1;
+
+    &--checkbox {
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-color: #ccc;
+        @include square(20);
+      }
+
+      &:after {
+        left: 5px;
+        @include square(10);
+        background-color: #000;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    //overflow: hidden;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid #000;
+
+
+    input {
+      display: block;
+      border: 0;
+      margin: 0;
+      position: relative;
+      height: 100%;
+      order: 2;
+      font-size: 18px;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+
+      &[type="text"], &[type="password"] {
+        width: calc(100% - 20px);
+        padding: 5px 15px;
+        transition: top 0.3s, font-size 0.3s;
+
+        &:not(:placeholder-shown) + label, &:focus + label {
+          top: -14px;
+          left: 0;
+          font-size: 14px;
+          transition: top 0.3s, left 0.3s, font-size 0.3s;
+        }
+
+        &:not(:focus) + label {
+          transition: top 0.3s, font-size 0.3s;
+        }
+      }
+
+      &[type="checkbox"] {
+        position: absolute;
+        left: -999px;
+        height: 0;
+        width: 0;
+
+        &:checked + label {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+
+      &[type="radio"] {
+        position: absolute;
+        left: -999px;
+        height: 0;
+        width: 0;
+
+        & + label {
+          &:before, &:after {
+            border-radius: 50%;
+          }
+        }
+
+        &:checked + label {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .btn__group {
+    margin: 30px 0;
+  }
+}

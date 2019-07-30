@@ -1,0 +1,20 @@
+html, body, section, .container, .wrapper {
+  height: 100%;
+}
+
+.login-page {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-uber-admin {
+    flex: 0 1 500px;
+
+    .form__header {
+      text-align: center;
+      font-size: 50px;
+    }
+  }
+}

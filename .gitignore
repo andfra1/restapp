@@ -1,0 +1,5 @@
+#gulp
+_gulp/node_modules
+
+#code editor
+.idea

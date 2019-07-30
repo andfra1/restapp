@@ -1,0 +1,103 @@
+%absoute {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin inlineAsBlock {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  //transition: 0.3s;
+}
+
+@mixin pos-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin pos-center-y {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin pos-center-x {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@mixin inlineCenter {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+@mixin clearfix {
+  overflow: auto;
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+@mixin hidden {
+  visibility: hidden;
+  position: fixed;
+  top: -1000px;
+  left: -1000px;
+}
+
+@mixin absolute {
+  @extend %absoute;
+}
+
+
+
+@mixin bgCenter {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+@mixin mq($size) {
+  @media (max-width: #{$size}px) {
+    @content ;
+  }
+}
+
+@mixin square($size) {
+  width: #{$size}px;
+  height: #{$size}px;
+}
+
+@mixin before {
+  &:before {
+    content: '';
+  }
+}
+
+@mixin after {
+  &:after {
+    content: '';
+  }
+}
+
+@mixin beforeAbsolute {
+  &:before {
+    content: '';
+    @extend absolute;
+  }
+}
+
+@mixin afterAbsolute {
+  &:after {
+    content: '';
+    @extend absolute;
+  }
+}
