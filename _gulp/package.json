@@ -27,6 +27,6 @@
     "postinstall": "gulp test"
   },
   "dependencies": {
-    "terser": "^4.1.2"
+    "terser": "^4.8.1"
   }
 }
